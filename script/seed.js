@@ -25,33 +25,38 @@ async function seed() {
       userId: users[1].id,
       goalId: goals[0].id,
       quantity: 8,
-      numberOfDays: 7
+      numberOfDays: 7,
+      completedDays: 0
     }),
     UserGoal.create({
       userId: users[2].id,
       goalId: goals[0].id,
       quantity: 8,
       numberOfDays: 7,
-      status: 'middle'
+      status: 'middle',
+      completedDays: 5
     }),
     UserGoal.create({
       userId: users[3].id,
       goalId: goals[1].id,
       quantity: 1200,
-      numberOfDays: 4
+      numberOfDays: 4,
+      completedDays: 0
     }),
     UserGoal.create({
       userId: users[4].id,
       goalId: goals[0].id,
       quantity: 8,
       numberOfDays: 300,
-      status: 'warning'
+      status: 'warning',
+      completedDays: 20
     }),
     UserGoal.create({
       userId: users[1].id,
       goalId: goals[1].id,
       quantity: 1000,
-      numberOfDays: 7
+      numberOfDays: 7,
+      completedDays: 0
     })
   ])
 
@@ -67,7 +72,7 @@ async function seed() {
   ])
 
   console.log(`seeded ${users.length} users, ${goals.length} goals,
-   ${usergoal.length} user goal, ${friends.length} friends`)
+   ${usergoal.length} user-goals (monsters), and ${friends.length} friends`)
   console.log(`seeded successfully`)
 }
 

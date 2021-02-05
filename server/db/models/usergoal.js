@@ -20,6 +20,14 @@ const UserGoal = db.define('usergoal', {
       min: 1,
       max: 365
     }
+  },
+  completedDays: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    validate: {
+      min: 0,
+      max: 365
+    }
   }
 })
 
