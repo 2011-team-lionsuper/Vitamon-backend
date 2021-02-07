@@ -1,6 +1,10 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// allowNull: false,
+//autoIncrement: true,
+//primaryKey: true
+
 const UserGoal = db.define('usergoal', {
   status: {
     type: Sequelize.ENUM('start', 'middle', 'warning', 'fail', 'complete'),
