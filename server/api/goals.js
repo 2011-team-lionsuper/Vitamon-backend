@@ -23,3 +23,13 @@ router.put('/:userGoalId', async (req, res, next) => {
     next(error)
   }
 })
+
+router.post('/:userId/add', async (req, res, next) => {
+  try {
+    const userGoal = await UserGoal.create(req.body)
+    console.log(userGoal)
+    res.send(userGoal)
+  } catch (error) {
+    next(error)
+  }
+})
