@@ -1,6 +1,10 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// allowNull: false,
+//autoIncrement: true,
+//primaryKey: true
+
 const UserGoal = db.define('usergoal', {
   id: {
     type: Sequelize.INTEGER,
