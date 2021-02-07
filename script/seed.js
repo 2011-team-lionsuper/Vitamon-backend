@@ -29,7 +29,28 @@ async function seed() {
       email: 'veronica@email.com',
       password: '123'
     }),
-    User.create({name: 'Daniel', email: 'daniel@email.com', password: '123'})
+    User.create({name: 'Daniel', email: 'daniel@email.com', password: '123'}),
+
+    User.create({name: 'Alex', email: 'alex@email.com', password: '123'}),
+    User.create({name: 'Adam', email: 'adam@email.com', password: '123'}),
+    User.create({name: 'Betty', email: 'betty@email.com', password: '123'}),
+    User.create({name: 'Bob', email: 'bob@email.com', password: '123'}),
+    User.create({name: 'Cindy', email: 'cindy@email.com', password: '123'}),
+    User.create({name: 'Chris', email: 'chris@email.com', password: '123'}),
+    User.create({name: 'Dorothy', email: 'dorothy@email.com', password: '123'}),
+    User.create({name: 'Dom', email: 'dom@email.com', password: '123'}),
+    User.create({name: 'Elisa', email: 'elisa@email.com', password: '123'}),
+    User.create({name: 'Eric', email: 'eric@email.com', password: '123'}),
+    User.create({name: 'French', email: 'french@email.com', password: '123'}),
+    User.create({name: 'Fannie', email: 'fannie@email.com', password: '123'}),
+    User.create({name: 'Grace', email: 'grace@email.com', password: '123'}),
+    User.create({name: 'Greg', email: 'greg@email.com', password: '123'}),
+    User.create({name: 'Hosanna', email: 'hosanna@email.com', password: '123'}),
+    User.create({name: 'Jose', email: 'jose@email.com', password: '123'}),
+    User.create({name: 'Ignacio', email: 'ignacio@email.com', password: '123'}),
+    User.create({name: 'Kathy', email: 'kathy@email.com', password: '123'}),
+    User.create({name: 'Lamar', email: 'lamar@email.com', password: '123'}),
+    User.create({name: 'Nancy', email: 'nancy@email.com', password: '123'})
   ])
 
   const goals = await Promise.all([
@@ -100,14 +121,14 @@ async function seed() {
       status: 'complete',
       completedDays: 4
     }),
-    // UserGoal.create({
-    //   userId: users[6].id,
-    //   goalId: goals[0].id,
-    //   quantity: 10,
-    //   numberOfDays: 5,
-    //   status: 'complete',
-    //   completedDays: 5,
-    // }),
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[0].id,
+      quantity: 10,
+      numberOfDays: 5,
+      status: 'complete',
+      completedDays: 5
+    }),
     UserGoal.create({
       userId: users[6].id,
       goalId: goals[1].id,
@@ -116,14 +137,14 @@ async function seed() {
       status: 'middle',
       completedDays: 0
     }),
-    // UserGoal.create({
-    //   userId: users[6].id,
-    //   goalId: goals[1].id,
-    //   quantity: 1000,
-    //   numberOfDays: 30,
-    //   status: 'middle',
-    //   completedDays: 15,
-    // }),
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[1].id,
+      quantity: 1000,
+      numberOfDays: 30,
+      status: 'middle',
+      completedDays: 15
+    }),
     UserGoal.create({
       userId: users[18].id,
       goalId: goals[0].id,
@@ -132,30 +153,30 @@ async function seed() {
       status: 'start',
       completedDays: 1
     }),
-    // UserGoal.create({
-    //   userId: users[18].id,
-    //   goalId: goals[0].id,
-    //   quantity: 10,
-    //   numberOfDays: 17,
-    //   status: 'warning',
-    //   completedDays: 15,
-    // }),
-    // UserGoal.create({
-    //   userId: users[18].id,
-    //   goalId: goals[0].id,
-    //   quantity: 20,
-    //   numberOfDays: 70,
-    //   status: 'complete',
-    //   completedDays: 20,
-    // }),
-    // UserGoal.create({
-    //   userId: users[18].id,
-    //   goalId: goals[1].id,
-    //   quantity: 10000,
-    //   numberOfDays: 5,
-    //   status: 'start',
-    //   completedDays: 0,
-    // }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[0].id,
+      quantity: 10,
+      numberOfDays: 17,
+      status: 'warning',
+      completedDays: 15
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[0].id,
+      quantity: 20,
+      numberOfDays: 70,
+      status: 'complete',
+      completedDays: 20
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[1].id,
+      quantity: 10000,
+      numberOfDays: 5,
+      status: 'start',
+      completedDays: 0
+    }),
     UserGoal.create({
       userId: users[18].id,
       goalId: goals[1].id,
@@ -172,30 +193,30 @@ async function seed() {
       status: 'complete',
       completedDays: 10
     }),
-    // UserGoal.create({
-    //   userId: users[24].id,
-    //   goalId: goals[0].id,
-    //   quantity: 10,
-    //   numberOfDays: 1,
-    //   status: 'complete',
-    //   completedDays: 1,
-    // }),
-    // UserGoal.create({
-    //   userId: users[24].id,
-    //   goalId: goals[0].id,
-    //   quantity: 1,
-    //   numberOfDays: 10,
-    //   status: 'complete',
-    //   completedDays: 10,
-    // }),
-    // UserGoal.create({
-    //   userId: users[24].id,
-    //   goalId: goals[0].id,
-    //   quantity: 50,
-    //   numberOfDays: 1,
-    //   status: 'complete',
-    //   completedDays: 0,
-    // }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 10,
+      numberOfDays: 1,
+      status: 'complete',
+      completedDays: 1
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 1,
+      numberOfDays: 10,
+      status: 'complete',
+      completedDays: 10
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 50,
+      numberOfDays: 1,
+      status: 'complete',
+      completedDays: 0
+    }),
     UserGoal.create({
       userId: users[24].id,
       goalId: goals[0].id,
