@@ -2,6 +2,12 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const UserGoal = db.define('usergoal', {
+  id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
+  },
   status: {
     type: Sequelize.ENUM('start', 'middle', 'warning', 'fail', 'complete'),
     defaultValue: 'start'
@@ -11,6 +17,12 @@ const UserGoal = db.define('usergoal', {
     allowNull: false,
     validate: {
       min: 1
+    }
+  },
+  completeQuantity: {
+    type: Sequelize.INTEGER,
+    validate: {
+      min: 0
     }
   },
   numberOfDays: {
