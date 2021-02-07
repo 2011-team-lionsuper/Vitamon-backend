@@ -13,8 +13,29 @@ User.belongsToMany(User, {
   as: 'friends',
   through: 'friendship'
 })
-User.belongsToMany(Goal, {through: UserGoal})
-Goal.belongsToMany(User, {through: UserGoal})
+User.belongsToMany(Goal, {
+  through: {model: UserGoal, unique: false, constraints: false},
+  foreignKey: {
+    name: 'userId',
+    primaryKey: false
+  },
+  otherKey: {
+    name: 'goalId',
+    primaryKey: false
+  }
+})
+Goal.belongsToMany(User, {
+  through: {model: UserGoal, unique: false, constraints: false},
+  foreignKey: {
+    name: 'goalId',
+    primaryKey: false
+  },
+  otherKey: {
+    name: 'userId',
+    primaryKey: false
+  }
+})
+
 /**
  * We'll export all of our models here, so that any time a module needs a model,
  * we can just require it from 'db/models'

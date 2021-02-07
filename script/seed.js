@@ -29,32 +29,7 @@ async function seed() {
       email: 'veronica@email.com',
       password: '123'
     }),
-    User.create({
-      name: 'Daniel',
-      email: 'daniel@email.com',
-      password: '123'
-    }),
-
-    User.create({name: 'Alex', email: 'alex@email.com', password: '123'}),
-    User.create({name: 'Adam', email: 'adam@email.com', password: '123'}),
-    User.create({name: 'Betty', email: 'betty@email.com', password: '123'}),
-    User.create({name: 'Bob', email: 'bob@email.com', password: '123'}),
-    User.create({name: 'Cindy', email: 'cindy@email.com', password: '123'}),
-    User.create({name: 'Chris', email: 'chris@email.com', password: '123'}),
-    User.create({name: 'Dorothy', email: 'dorothy@email.com', password: '123'}),
-    User.create({name: 'Dom', email: 'dom@email.com', password: '123'}),
-    User.create({name: 'Elisa', email: 'elisa@email.com', password: '123'}),
-    User.create({name: 'Eric', email: 'eric@email.com', password: '123'}),
-    User.create({name: 'French', email: 'french@email.com', password: '123'}),
-    User.create({name: 'Fannie', email: 'fannie@email.com', password: '123'}),
-    User.create({name: 'Grace', email: 'grace@email.com', password: '123'}),
-    User.create({name: 'Greg', email: 'greg@email.com', password: '123'}),
-    User.create({name: 'Hosanna', email: 'hosanna@email.com', password: '123'}),
-    User.create({name: 'Jose', email: 'jose@email.com', password: '123'}),
-    User.create({name: 'Ignacio', email: 'ignacio@email.com', password: '123'}),
-    User.create({name: 'Kathy', email: 'kathy@email.com', password: '123'}),
-    User.create({name: 'Lamar', email: 'lamar@email.com', password: '123'}),
-    User.create({name: 'Nancy', email: 'nancy@email.com', password: '123'})
+    User.create({name: 'Daniel', email: 'daniel@email.com', password: '123'})
   ])
 
   const goals = await Promise.all([
@@ -69,6 +44,13 @@ async function seed() {
       quantity: 8,
       numberOfDays: 7,
       status: 'middle',
+      completedDays: 0
+    }),
+    UserGoal.create({
+      userId: users[1].id,
+      goalId: goals[0].id,
+      quantity: 6,
+      numberOfDays: 5,
       completedDays: 0
     }),
     UserGoal.create({
