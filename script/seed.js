@@ -29,7 +29,28 @@ async function seed() {
       email: 'veronica@email.com',
       password: '123'
     }),
-    User.create({name: 'Daniel', email: 'daniel@email.com', password: '123'})
+    User.create({name: 'Daniel', email: 'daniel@email.com', password: '123'}),
+
+    User.create({name: 'Alex', email: 'alex@email.com', password: '123'}),
+    User.create({name: 'Adam', email: 'adam@email.com', password: '123'}),
+    User.create({name: 'Betty', email: 'betty@email.com', password: '123'}),
+    User.create({name: 'Bob', email: 'bob@email.com', password: '123'}),
+    User.create({name: 'Cindy', email: 'cindy@email.com', password: '123'}),
+    User.create({name: 'Chris', email: 'chris@email.com', password: '123'}),
+    User.create({name: 'Dorothy', email: 'dorothy@email.com', password: '123'}),
+    User.create({name: 'Dom', email: 'dom@email.com', password: '123'}),
+    User.create({name: 'Elisa', email: 'elisa@email.com', password: '123'}),
+    User.create({name: 'Eric', email: 'eric@email.com', password: '123'}),
+    User.create({name: 'French', email: 'french@email.com', password: '123'}),
+    User.create({name: 'Fannie', email: 'fannie@email.com', password: '123'}),
+    User.create({name: 'Grace', email: 'grace@email.com', password: '123'}),
+    User.create({name: 'Greg', email: 'greg@email.com', password: '123'}),
+    User.create({name: 'Hosanna', email: 'hosanna@email.com', password: '123'}),
+    User.create({name: 'Jose', email: 'jose@email.com', password: '123'}),
+    User.create({name: 'Ignacio', email: 'ignacio@email.com', password: '123'}),
+    User.create({name: 'Kathy', email: 'kathy@email.com', password: '123'}),
+    User.create({name: 'Lamar', email: 'lamar@email.com', password: '123'}),
+    User.create({name: 'Nancy', email: 'nancy@email.com', password: '123'})
   ])
 
   const goals = await Promise.all([
@@ -80,19 +101,180 @@ async function seed() {
       goalId: goals[1].id,
       quantity: 1000,
       numberOfDays: 7,
+      status: 'warning',
       completedDays: 0
+    }),
+
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[0].id,
+      quantity: 4,
+      numberOfDays: 4,
+      status: 'start',
+      completedDays: 0
+    }),
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[0].id,
+      quantity: 20,
+      numberOfDays: 4,
+      status: 'complete',
+      completedDays: 4
+    }),
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[0].id,
+      quantity: 10,
+      numberOfDays: 5,
+      status: 'complete',
+      completedDays: 5
+    }),
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[1].id,
+      quantity: 1000,
+      numberOfDays: 1,
+      status: 'middle',
+      completedDays: 0
+    }),
+    UserGoal.create({
+      userId: users[6].id,
+      goalId: goals[1].id,
+      quantity: 1000,
+      numberOfDays: 30,
+      status: 'middle',
+      completedDays: 15
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[0].id,
+      quantity: 4,
+      numberOfDays: 1,
+      status: 'start',
+      completedDays: 1
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[0].id,
+      quantity: 10,
+      numberOfDays: 17,
+      status: 'warning',
+      completedDays: 15
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[0].id,
+      quantity: 20,
+      numberOfDays: 70,
+      status: 'complete',
+      completedDays: 20
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[1].id,
+      quantity: 10000,
+      numberOfDays: 5,
+      status: 'start',
+      completedDays: 0
+    }),
+    UserGoal.create({
+      userId: users[18].id,
+      goalId: goals[1].id,
+      quantity: 1000,
+      numberOfDays: 7,
+      status: 'middle',
+      completedDays: 0
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[1].id,
+      quantity: 1000,
+      numberOfDays: 10,
+      status: 'complete',
+      completedDays: 10
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 10,
+      numberOfDays: 1,
+      status: 'complete',
+      completedDays: 1
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 1,
+      numberOfDays: 10,
+      status: 'complete',
+      completedDays: 10
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 50,
+      numberOfDays: 1,
+      status: 'complete',
+      completedDays: 0
+    }),
+    UserGoal.create({
+      userId: users[24].id,
+      goalId: goals[0].id,
+      quantity: 8,
+      numberOfDays: 7,
+      status: 'start',
+      completedDays: 3
     })
   ])
 
   const friends = await Promise.all([
     users[0].addFriend(2),
+    users[1].addFriend(1),
     users[0].addFriend(3),
+    users[2].addFriend(1),
     users[0].addFriend(4),
+    users[3].addFriend(1),
     users[0].addFriend(5),
+    users[4].addFriend(1),
     users[1].addFriend(3),
+    users[2].addFriend(2),
     users[1].addFriend(4),
-    users[1].addFriend(5),
-    users[2].addFriend(4)
+    users[3].addFriend(2),
+    users[1].addFriend(6),
+    users[4].addFriend(2),
+    users[2].addFriend(4),
+    users[3].addFriend(3),
+    users[4].addFriend(18),
+    users[17].addFriend(5),
+    users[4].addFriend(3),
+    users[4].addFriend(4),
+    users[6].addFriend(8),
+    users[7].addFriend(7),
+    users[6].addFriend(9),
+    users[8].addFriend(7),
+    users[6].addFriend(10),
+    users[9].addFriend(7),
+    users[6].addFriend(12),
+    users[11].addFriend(7),
+    users[18].addFriend(14),
+    users[18].addFriend(15),
+    users[18].addFriend(16),
+    users[18].addFriend(17),
+    users[18].addFriend(19),
+    users[18].addFriend(20),
+    users[18].addFriend(21),
+    users[18].addFriend(22),
+    users[18].addFriend(23),
+    users[18].addFriend(24),
+    users[18].addFriend(25),
+    users[24].addFriend(0),
+    users[24].addFriend(1),
+    users[24].addFriend(2),
+    users[24].addFriend(3),
+    users[24].addFriend(4),
+    users[24].addFriend(5),
+    users[24].addFriend(6)
+    // Is user[6] Alex but has userId of 7?  Then user[24] should be Nancy.
   ])
 
   console.log(`seeded ${users.length} users, ${goals.length} goals,
