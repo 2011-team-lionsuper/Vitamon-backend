@@ -14,14 +14,26 @@ User.belongsToMany(User, {
   through: 'friendship'
 })
 User.belongsToMany(Goal, {
-  through: UserGoal,
-  foreignKey: 'userId',
-  otherKey: 'goalId'
+  through: {model: UserGoal, unique: false, constraints: false},
+  foreignKey: {
+    name: 'userId',
+    primaryKey: false
+  },
+  otherKey: {
+    name: 'goalId',
+    primaryKey: false
+  }
 })
 Goal.belongsToMany(User, {
-  through: UserGoal,
-  foreignKey: 'goalId',
-  otherKey: 'userId'
+  through: {model: UserGoal, unique: false, constraints: false},
+  foreignKey: {
+    name: 'goalId',
+    primaryKey: false
+  },
+  otherKey: {
+    name: 'userId',
+    primaryKey: false
+  }
 })
 
 /**

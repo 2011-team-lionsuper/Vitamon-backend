@@ -46,6 +46,13 @@ async function seed() {
       completedDays: 0
     }),
     UserGoal.create({
+      userId: users[1].id,
+      goalId: goals[0].id,
+      quantity: 6,
+      numberOfDays: 5,
+      completedDays: 0
+    }),
+    UserGoal.create({
       userId: users[2].id,
       goalId: goals[0].id,
       quantity: 8,
