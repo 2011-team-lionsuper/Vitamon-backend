@@ -47,4 +47,23 @@ const UserGoal = db.define('usergoal', {
   }
 })
 
+UserGoal.prototype.updateStatus = function() {
+  let percent = this.completedDays / this.numberOfDays * 100
+  console.log('usergoal BEFORE', this)
+  if (percent <= 40) {
+    this.status = 'start'
+  } else if (percent >= 40 && percent < 100) {
+    this.status = 'middle'
+  } else if (percent >= 100) {
+    this.status = 'complete'
+  }
+  console.log('usergoal AFTER', this)
+}
+
+const statusUpdate = usergoal => {
+  usergoal.updateStatus()
+}
+
+UserGoal.afterUpdate(statusUpdate)
+
 module.exports = UserGoal
