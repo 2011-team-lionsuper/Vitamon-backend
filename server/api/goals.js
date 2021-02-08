@@ -18,6 +18,7 @@ router.put('/:userGoalId', async (req, res, next) => {
     })
     await userGoal.update(req.body)
     await userGoal.save()
+    await userGoal.reload()
     res.send(userGoal)
   } catch (error) {
     next(error)
