@@ -65,13 +65,14 @@ async function seed() {
       quantity: 8,
       numberOfDays: 7,
       status: 'middle',
-      completedDays: 0
+      completedDays: 3
     }),
     UserGoal.create({
       userId: users[1].id,
       goalId: goals[0].id,
       quantity: 6,
       numberOfDays: 5,
+      status: 'start',
       completedDays: 0
     }),
     UserGoal.create({
@@ -95,6 +96,7 @@ async function seed() {
       goalId: goals[1].id,
       quantity: 1200,
       numberOfDays: 4,
+      status: 'start',
       completedDays: 0
     }),
     UserGoal.create({
@@ -111,7 +113,7 @@ async function seed() {
       quantity: 1000,
       numberOfDays: 7,
       status: 'warning',
-      completedDays: 0
+      completedDays: 2
     }),
 
     UserGoal.create({
@@ -142,9 +144,9 @@ async function seed() {
       userId: users[6].id,
       goalId: goals[1].id,
       quantity: 1000,
-      numberOfDays: 1,
+      numberOfDays: 5,
       status: 'middle',
-      completedDays: 0
+      completedDays: 3
     }),
     UserGoal.create({
       userId: users[6].id,
@@ -158,9 +160,9 @@ async function seed() {
       userId: users[18].id,
       goalId: goals[0].id,
       quantity: 4,
-      numberOfDays: 1,
+      numberOfDays: 5,
       status: 'start',
-      completedDays: 1
+      completedDays: 0
     }),
     UserGoal.create({
       userId: users[18].id,
@@ -176,7 +178,7 @@ async function seed() {
       quantity: 20,
       numberOfDays: 70,
       status: 'complete',
-      completedDays: 20
+      completedDays: 70
     }),
     UserGoal.create({
       userId: users[18].id,
@@ -192,7 +194,7 @@ async function seed() {
       quantity: 1000,
       numberOfDays: 7,
       status: 'middle',
-      completedDays: 0
+      completedDays: 4
     }),
     UserGoal.create({
       userId: users[24].id,
@@ -206,9 +208,9 @@ async function seed() {
       userId: users[24].id,
       goalId: goals[0].id,
       quantity: 10,
-      numberOfDays: 1,
+      numberOfDays: 3,
       status: 'complete',
-      completedDays: 1
+      completedDays: 3
     }),
     UserGoal.create({
       userId: users[24].id,
@@ -222,9 +224,9 @@ async function seed() {
       userId: users[24].id,
       goalId: goals[0].id,
       quantity: 50,
-      numberOfDays: 1,
+      numberOfDays: 7,
       status: 'complete',
-      completedDays: 0
+      completedDays: 7
     }),
     UserGoal.create({
       userId: users[24].id,
@@ -232,7 +234,7 @@ async function seed() {
       quantity: 8,
       numberOfDays: 7,
       status: 'start',
-      completedDays: 3
+      completedDays: 0
     })
   ])
 
