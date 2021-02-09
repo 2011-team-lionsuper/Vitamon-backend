@@ -1,7 +1,17 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// allowNull: false,
+//autoIncrement: true,
+//primaryKey: true
+
 const UserGoal = db.define('usergoal', {
+  id: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
+  },
   status: {
     type: Sequelize.ENUM('start', 'middle', 'warning', 'fail', 'complete'),
     defaultValue: 'start'
@@ -11,6 +21,12 @@ const UserGoal = db.define('usergoal', {
     allowNull: false,
     validate: {
       min: 1
+    }
+  },
+  completeQuantity: {
+    type: Sequelize.INTEGER,
+    validate: {
+      min: 0
     }
   },
   numberOfDays: {
@@ -30,5 +46,26 @@ const UserGoal = db.define('usergoal', {
     }
   }
 })
+
+UserGoal.prototype.updateStatus = function() {
+  let percent = this.completedDays / this.numberOfDays * 100
+  if (percent <= 40) {
+    this.status = 'start'
+  } else if (percent >= 40 && percent < 100) {
+    this.status = 'middle'
+  } else if (percent >= 100) {
+    this.status = 'complete'
+  }
+}
+
+const statusUpdate = usergoal => {
+  usergoal.updateStatus()
+}
+
+UserGoal.afterCreate(statusUpdate)
+// UserGoal.afterBulkCreate((usergoals) => {
+//   usergoals.forEach(statusUpdate)
+// })
+UserGoal.afterUpdate(statusUpdate)
 
 module.exports = UserGoal
