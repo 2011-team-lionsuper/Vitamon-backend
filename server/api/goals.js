@@ -1,10 +1,20 @@
 const router = require('express').Router()
+const {compile} = require('morgan')
 const {Goal, User, UserGoal} = require('../db/models')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
     const goals = await UserGoal.findAll({})
+    res.json(goals)
+  } catch (err) {
+    next(err)
+  }
+})
+
+router.get('/goals', async (req, res, next) => {
+  try {
+    const goals = await Goal.findAll({})
     res.json(goals)
   } catch (err) {
     next(err)
