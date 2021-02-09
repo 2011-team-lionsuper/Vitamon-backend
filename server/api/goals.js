@@ -4,8 +4,9 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const goals = await UserGoal.findAll({})
+    const goals = await UserGoal.findAll()
     res.json(goals)
+    console.log(goals)
   } catch (err) {
     next(err)
   }
@@ -28,6 +29,7 @@ router.put('/:userGoalId', async (req, res, next) => {
     const userGoal = await UserGoal.findOne({
       where: {id: req.params.userGoalId}
     })
+
     await userGoal.update(req.body)
     await userGoal.save()
     await userGoal.reload()
