@@ -54,8 +54,8 @@ async function seed() {
   ])
 
   const goals = await Promise.all([
-    Goal.create({type: 'Water'}),
-    Goal.create({type: 'Steps'})
+    Goal.create({type: 'Water', id: 1}),
+    Goal.create({type: 'Steps', id: 2})
   ])
 
   const usergoal = await Promise.all([
