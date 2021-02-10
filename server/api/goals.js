@@ -13,16 +13,14 @@ router.get('/', async (req, res, next) => {
 })
 
 router.get('/:userId', async (req, res, next) => {
-    try {
-    const user = await User.findOne(
-            {where: {id: req.params.userId}}
-     )
+  try {
+    const user = await User.findOne({where: {id: req.params.userId}})
     const goals = await user.getGoals()
     res.json(goals)
-    } catch (err) {
-      next(err)
-    }
-  })
+  } catch (err) {
+    next(err)
+  }
+})
 
 router.put('/:userGoalId', async (req, res, next) => {
   try {
