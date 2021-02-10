@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const {User, Goal, UserGoal} = require('../server/db/models')
+const {User, Goal} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
@@ -54,183 +54,178 @@ async function seed() {
   ])
 
   const goals = await Promise.all([
-    Goal.create({type: 'Water', id: 1}),
-    Goal.create({type: 'Steps', id: 2})
-  ])
-
-  const usergoal = await Promise.all([
-    UserGoal.create({
+    Goal.create({
       userId: users[1].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 8,
       numberOfDays: 7,
       status: 'middle',
       completedDays: 3
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[1].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 6,
       numberOfDays: 5,
       status: 'start',
       completedDays: 0
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[2].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 8,
       numberOfDays: 7,
       status: 'complete',
       completedDays: 7
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[2].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1000,
       numberOfDays: 3,
       status: 'complete',
       completedDays: 3
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[3].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1200,
       numberOfDays: 4,
       status: 'start',
       completedDays: 0
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[4].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 8,
-      numberOfDays: 300,
+      numberOfDays: 40,
       status: 'warning',
-      completedDays: 20
+      completedDays: 2
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[1].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1000,
       numberOfDays: 7,
       status: 'warning',
       completedDays: 2
     }),
 
-    UserGoal.create({
+    Goal.create({
       userId: users[6].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 4,
       numberOfDays: 4,
       status: 'start',
       completedDays: 0
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[6].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 20,
       numberOfDays: 4,
       status: 'complete',
       completedDays: 4
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[6].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 10,
       numberOfDays: 5,
       status: 'complete',
       completedDays: 5
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[6].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1000,
       numberOfDays: 5,
       status: 'middle',
       completedDays: 3
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[6].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1000,
       numberOfDays: 30,
       status: 'middle',
       completedDays: 15
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[18].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 4,
       numberOfDays: 5,
       status: 'start',
       completedDays: 0
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[18].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 10,
       numberOfDays: 17,
       status: 'warning',
       completedDays: 15
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[18].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 20,
       numberOfDays: 70,
       status: 'complete',
       completedDays: 70
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[18].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 10000,
       numberOfDays: 5,
       status: 'start',
       completedDays: 0
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[18].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1000,
       numberOfDays: 7,
       status: 'middle',
       completedDays: 4
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[24].id,
-      goalId: goals[1].id,
+      type: 'Steps',
       quantity: 1000,
       numberOfDays: 10,
       status: 'complete',
       completedDays: 10
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[24].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 10,
       numberOfDays: 3,
       status: 'complete',
       completedDays: 3
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[24].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 1,
       numberOfDays: 10,
       status: 'complete',
       completedDays: 10
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[24].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 50,
       numberOfDays: 7,
       status: 'complete',
       completedDays: 7
     }),
-    UserGoal.create({
+    Goal.create({
       userId: users[24].id,
-      goalId: goals[0].id,
+      type: 'Water',
       quantity: 8,
       numberOfDays: 7,
       status: 'start',
@@ -289,7 +284,7 @@ async function seed() {
   ])
 
   console.log(`seeded ${users.length} users, ${goals.length} goals,
-   ${usergoal.length} user-goals (monsters), and ${friends.length} friends`)
+   ${Goal.length} user-goals (monsters), and ${friends.length} friends`)
   console.log(`seeded successfully`)
 }
 
