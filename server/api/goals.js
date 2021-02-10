@@ -24,13 +24,11 @@ router.get('/:userId', async (req, res, next) => {
 
 router.put('/:userGoalId', async (req, res, next) => {
   try {
-    const goal = await Goal.findOne({
-      where: {id: req.params.userGoalId}
-    })
+    const goal = await Goal.findByPk(req.params.userGoalId)
 
-    await Goal.update(req.body)
-    await Goal.save()
-    await Goal.reload()
+    await goal.update(req.body)
+    await goal.save()
+    await goal.reload()
     res.send(goal)
   } catch (error) {
     next(error)
