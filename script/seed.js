@@ -284,7 +284,7 @@ async function seed() {
   ])
 
   console.log(`seeded ${users.length} users, ${goals.length} goals,
-   ${Goal.length} user-goals (monsters), and ${friends.length} friends`)
+  and ${friends.length} friends`)
   console.log(`seeded successfully`)
 }
 

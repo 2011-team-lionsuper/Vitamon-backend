@@ -1,10 +1,10 @@
 const router = require('express').Router()
-const {Goal, User, UserGoal} = require('../db/models')
+const {Goal, User} = require('../db/models')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    const goals = await UserGoal.findAll()
+    const goals = await Goal.findAll()
     res.json(goals)
     console.log(goals)
   } catch (err) {
@@ -24,14 +24,14 @@ router.get('/:userId', async (req, res, next) => {
 
 router.put('/:userGoalId', async (req, res, next) => {
   try {
-    const userGoal = await UserGoal.findOne({
+    const goal = await Goal.findOne({
       where: {id: req.params.userGoalId}
     })
 
-    await userGoal.update(req.body)
-    await userGoal.save()
-    await userGoal.reload()
-    res.send(userGoal)
+    await Goal.update(req.body)
+    await Goal.save()
+    await Goal.reload()
+    res.send(goal)
   } catch (error) {
     next(error)
   }
@@ -39,9 +39,9 @@ router.put('/:userGoalId', async (req, res, next) => {
 
 router.post('/add', async (req, res, next) => {
   try {
-    const userGoal = await UserGoal.create(req.body)
-    console.log(userGoal)
-    res.send(userGoal)
+    const goal = await Goal.create(req.body)
+
+    res.send(goal)
   } catch (error) {
     next(error)
   }
