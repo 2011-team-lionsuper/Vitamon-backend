@@ -1,8 +1,9 @@
 const router = require('express').Router()
 const {Goal, User} = require('../db/models')
+const {isAdmin, usersOnly} = require('../util')
 module.exports = router
 
-router.get('/', async (req, res, next) => {
+router.get('/', isAdmin, async (req, res, next) => {
   try {
     const goals = await Goal.findAll()
     res.json(goals)
@@ -12,7 +13,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/:userId', async (req, res, next) => {
+router.get('/:userId', usersOnly, async (req, res, next) => {
   try {
     const user = await User.findOne({where: {id: req.params.userId}})
     const goals = await user.getGoals()
@@ -22,7 +23,7 @@ router.get('/:userId', async (req, res, next) => {
   }
 })
 
-router.put('/:userGoalId', async (req, res, next) => {
+router.put('/:userGoalId', usersOnly, async (req, res, next) => {
   try {
     const goal = await Goal.findByPk(req.params.userGoalId)
 
@@ -35,7 +36,7 @@ router.put('/:userGoalId', async (req, res, next) => {
   }
 })
 
-router.post('/add', async (req, res, next) => {
+router.post('/add', usersOnly, async (req, res, next) => {
   try {
     const goal = await Goal.create(req.body)
 
