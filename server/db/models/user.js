@@ -38,6 +38,11 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     defaultValue: 'public/images/anonymous-avatar-sm.jpg'
   }
+
+  // isFriend:{
+  //   type: Sequelize.VIRTUAL,
+  //   if (this.User = "friend") getGoals()
+  // }
 })
 
 module.exports = User
@@ -48,7 +53,20 @@ module.exports = User
 User.prototype.correctPassword = function(candidatePwd) {
   return User.encryptPassword(candidatePwd, this.salt()) === this.password()
 }
+User.prototype.getFriendsAndGoals = async function() {
+  const friends = await this.getFriends()
+  let friendsWithGoals = []
 
+  for (let i = 0; i < friends.length; i++) {
+    let friendGoals = await friends[i].getGoals()
+
+    friends[i].dataValues.goals = friendGoals
+
+    friendsWithGoals.push(friends[i])
+  }
+
+  return friendsWithGoals
+}
 /**
  * classMethods
  */
