@@ -73,16 +73,48 @@ async function seed() {
     Goal.create({
       userId: users[2].id,
       type: 'Water',
-      quantity: 8,
+      quantity: 1,
       numberOfDays: 7,
       status: 'complete',
       completedDays: 7
     }),
     Goal.create({
       userId: users[2].id,
-      type: 'Steps',
-      quantity: 1000,
+      type: 'Water',
+      quantity: 5,
       numberOfDays: 3,
+      status: 'complete',
+      completedDays: 7
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Steps',
+      quantity: 100,
+      numberOfDays: 3,
+      status: 'complete',
+      completedDays: 3
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Steps',
+      quantity: 110,
+      numberOfDays: 3,
+      status: 'complete',
+      completedDays: 3
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Steps',
+      quantity: 90,
+      numberOfDays: 2,
+      status: 'complete',
+      completedDays: 3
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Steps',
+      quantity: 40,
+      numberOfDays: 4,
       status: 'complete',
       completedDays: 3
     }),
