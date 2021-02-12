@@ -12,45 +12,179 @@ async function seed() {
       name: 'Cody',
       email: 'cody@email.com',
       password: '123',
-      isAdmin: true
+      isAdmin: true,
+      imageUrl:
+        'https://images.unsplash.com/photo-1509037837816-6d0b98fcdf08?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cHVnfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
     }),
     User.create({
       name: 'Melissa',
       email: 'melissa@email.com',
-      password: '123'
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
     }),
     User.create({
       name: 'Priscila',
       email: 'priscila@email.com',
-      password: '123'
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
     }),
     User.create({
       name: 'Veronica',
       email: 'veronica@email.com',
-      password: '123'
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1520283818086-3f6dffb019c0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
     }),
-    User.create({name: 'Daniel', email: 'daniel@email.com', password: '123'}),
+    User.create({
+      name: 'Daniel',
+      email: 'daniel@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8&auto=format&fit=crop&w=700&q=60'
+    }),
 
-    User.create({name: 'Alex', email: 'alex@email.com', password: '123'}),
-    User.create({name: 'Adam', email: 'adam@email.com', password: '123'}),
-    User.create({name: 'Betty', email: 'betty@email.com', password: '123'}),
-    User.create({name: 'Bob', email: 'bob@email.com', password: '123'}),
-    User.create({name: 'Cindy', email: 'cindy@email.com', password: '123'}),
-    User.create({name: 'Chris', email: 'chris@email.com', password: '123'}),
-    User.create({name: 'Dorothy', email: 'dorothy@email.com', password: '123'}),
-    User.create({name: 'Dom', email: 'dom@email.com', password: '123'}),
-    User.create({name: 'Elisa', email: 'elisa@email.com', password: '123'}),
-    User.create({name: 'Eric', email: 'eric@email.com', password: '123'}),
-    User.create({name: 'French', email: 'french@email.com', password: '123'}),
-    User.create({name: 'Fannie', email: 'fannie@email.com', password: '123'}),
-    User.create({name: 'Grace', email: 'grace@email.com', password: '123'}),
-    User.create({name: 'Greg', email: 'greg@email.com', password: '123'}),
-    User.create({name: 'Hosanna', email: 'hosanna@email.com', password: '123'}),
-    User.create({name: 'Jose', email: 'jose@email.com', password: '123'}),
-    User.create({name: 'Ignacio', email: 'ignacio@email.com', password: '123'}),
-    User.create({name: 'Kathy', email: 'kathy@email.com', password: '123'}),
-    User.create({name: 'Lamar', email: 'lamar@email.com', password: '123'}),
-    User.create({name: 'Nancy', email: 'nancy@email.com', password: '123'})
+    User.create({
+      name: 'Alex',
+      email: 'alex@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Adam',
+      email: 'adam@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
+    }),
+    User.create({
+      name: 'Betty',
+      email: 'betty@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Bob',
+      email: 'bob@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Cindy',
+      email: 'cindy@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzN8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Chris',
+      email: 'chris@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1549820610-ec7475b33969?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjh8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Dorothy',
+      email: 'dorothy@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1502767882403-636aee14f873?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDl8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Dom',
+      email: 'dom@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1594546325110-a530729c3f99?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Elisa',
+      email: 'elisa@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1429277005502-eed8e872fe52?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjJ8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Eric',
+      email: 'eric@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjV8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'French',
+      email: 'french@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1601455763557-db1bea8a9a5a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzJ8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Fannie',
+      email: 'fannie@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDh8fHdvbWFufGVufDB8fDB8&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Grace',
+      email: 'grace@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1506956191951-7a88da4435e5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Greg',
+      email: 'greg@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2200&q=80'
+    }),
+    User.create({
+      name: 'Hosanna',
+      email: 'hosanna@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1564766642708-1d7600074ff5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTl8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Jose',
+      email: 'jose@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1528763380143-65b3ac89a3ff?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=670&q=80'
+    }),
+    User.create({
+      name: 'Ignacio',
+      email: 'ignacio@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Kathy',
+      email: 'kathy@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8d29tYW58ZW58MHx8MHw%3D&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Lamar',
+      email: 'lamar@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1544723495-432537d12f6c?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDN8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    }),
+    User.create({
+      name: 'Nancy',
+      email: 'nancy@email.com',
+      password: '123',
+      imageUrl:
+        'https://images.unsplash.com/photo-1569913486515-b74bf7751574?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDh8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+    })
   ])
 
   const goals = await Promise.all([
