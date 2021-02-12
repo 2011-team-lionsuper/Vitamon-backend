@@ -21,7 +21,9 @@ router.get('/', isAdmin, async (req, res, next) => {
 router.get('/:userId/friends', async (req, res, next) => {
   try {
     const user = await User.findOne({where: {id: req.params.userId}})
-    const friends = await user.getFriends()
+
+    const friends = await user.getFriendsAndGoals()
+
     res.json(friends)
   } catch (err) {
     next(err)
