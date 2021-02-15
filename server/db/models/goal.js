@@ -44,9 +44,9 @@ const Goal = db.define('goal', {
 
 Goal.prototype.updateStatus = function() {
   let percent = this.completedDays / this.numberOfDays * 100
-  if (percent <= 40) {
+  if (percent < 25) {
     this.status = 'start'
-  } else if (percent >= 40 && percent < 100) {
+  } else if (percent >= 25 && percent < 100) {
     this.status = 'middle'
   } else if (percent >= 100) {
     this.status = 'complete'
