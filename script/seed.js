@@ -25,10 +25,10 @@ async function seed() {
     }),
     User.create({
       name: 'Priscila',
-      email: 'priscila@email.com',
-      password: '123',
+      email: 'priscilapintado66@gmail.com',
+      password: 'queens96',
       imageUrl:
-        'https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60'
+        'https://ca.slack-edge.com/T024FPYBQ-U019PC99EQ0-1248eb168c16-512'
     }),
     User.create({
       name: 'Veronica',
@@ -214,10 +214,42 @@ async function seed() {
     }),
     Goal.create({
       userId: users[2].id,
+      type: 'Water',
+      quantity: 5,
+      numberOfDays: 7,
+      status: 'complete',
+      completedDays: 7
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Water',
+      quantity: 6,
+      numberOfDays: 8,
+      status: 'complete',
+      completedDays: 8
+    }),
+    Goal.create({
+      userId: users[2].id,
       type: 'Steps',
       quantity: 1000,
       numberOfDays: 3,
       status: 'complete',
+      completedDays: 3
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Steps',
+      quantity: 1200,
+      numberOfDays: 2,
+      status: 'complete',
+      completedDays: 2
+    }),
+    Goal.create({
+      userId: users[2].id,
+      type: 'Steps',
+      quantity: 6000,
+      numberOfDays: 12,
+      status: 'middle',
       completedDays: 3
     }),
     Goal.create({
