@@ -401,7 +401,7 @@ async function seed() {
 
   const friends = await Promise.all([
     users[0].addFriend(2),
-    users[1].addFriend(1),
+
     users[0].addFriend(3),
     users[2].addFriend(1),
     users[0].addFriend(4),
